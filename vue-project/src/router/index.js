@@ -23,17 +23,11 @@ const routes = [{
   {
     path: "/aboutA",
     name: "aboutA",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: aboutA
   },
   {
     path: "/aboutB",
     name: "aboutB",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: aboutB
   }
 ];
