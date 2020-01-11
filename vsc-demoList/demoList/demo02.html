@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>并网验收申请</title>
+  <script src="../js/jquery.js"></script>
+  <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+  <style>
+    #inputA {
+      border: none;
+      width: 12rem;
+    }
+
+    #inputB {
+      border: none;
+      width: 14rem;
+    }
+
+    #inputC {
+      border: none;
+      width: 3rem;
+    }
+
+    .text_user {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    #in_user {
+      border: none;
+      width: 3rem;
+    }
+
+    #in_phone {
+      border: none;
+      width: 3rem;
+    }
+
+    #in_gz {
+      border: none;
+      width: 3rem;
+    }
+
+    #in_year {
+      border: none;
+      width: 3rem;
+    }
+
+    #in_month {
+      border: none;
+      width: 2rem;
+    }
+
+    #in_day {
+      border: none;
+      width: 2rem;
+    }
+
+    .meddle_text {
+      line-height: 4rem;
+      font-size: 14px;
+    }
+
+    .meddle_message {
+      line-height: 3rem;
+      font-size: 13px;
+    }
+
+    .submit_btn {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3 class="text-center"><strong>并网验收申请</strong></h3>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h5 class="text-left">郑州市热力总公司:</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <span class="meddle_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我单位兴建地址于<input id="inputA" type="text"
+            placeholder="_ _ _ _ _ _ _ _ _ _ _ _">的
+          <input id="inputB" type="text" placeholder="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _">工程，现已竣工，各种资料已备齐，特申请进行(第
+          <input id="inputC" type="text" placeholder="_ _ _ _ _ _ _ _ _ _ _ _">次)并网验收。
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="text_user meddle_message">
+          <span>联系人：<input id="in_user" type="text" placeholder="—————"></span>
+          <span>电话：<input id="in_phone" type="text" placeholder="—————"></span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="text-right meddle_message">
+          用热单位（盖章）：<input id="in_gz" type="text" placeholder="—————">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="text-right meddle_message">
+          <input type="text" id="in_year" placeholder="2019">年
+          <input type="text" id="in_month" placeholder="11">月
+          <input type="text" id="in_day" placeholder="27">日
+        </div>
+      </div>
+    </div>
+    <div class="row submit_btn">
+      <div class="col-xs-3 col-xs-offset-9">
+        <button type="button" class="btn  btn-primary">提交</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

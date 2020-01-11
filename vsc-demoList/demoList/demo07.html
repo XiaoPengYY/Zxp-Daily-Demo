@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>整改意见模板</title>
+  <script src="../js/jquery.js"></script>
+  <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+  <script src="../layui/layui.js"></script>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+  <style>
+    body {
+      margin: 0 auto;
+      max-width: 830px;
+    }
+
+    .pdf_model {
+      width: 820px;
+      height: 1174px;
+    }
+
+    .table {
+      table-layout: fixed;
+    }
+
+    .boxes {
+      width: 800px;
+    }
+
+    .table,
+    .table tr td {
+      border: 1px solid rgb(0, 0, 0) !important;
+    }
+
+    .in_form {
+      border: none;
+      width: 100%;
+    }
+
+    .head_title {
+      padding: 20px 0px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .vertical_td {
+      display: table-cell;
+      vertical-align: middle !important;
+      text-align: center;
+    }
+
+    .vertical_span {
+      writing-mode: vertical-lr;
+    }
+
+    .input_text_box {
+      overflow: hidden;
+    }
+
+    .exam_box {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: nowrap;
+      margin: 30px 0px;
+      height: 200px;
+    }
+
+
+    .exam_left {
+      position: relative;
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .stamp_gz img {
+      position: absolute;
+      height: 200px;
+      width: 200px;
+      top: 0px;
+      left: 0px;
+    }
+
+    .chance_message {
+      margin-bottom: 20px;
+    }
+
+    .exam_right {
+      width: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .exam_title {
+      line-height: 100px;
+    }
+
+    .exam_time {
+      border: none;
+      margin: 20px;
+    }
+
+    .stamp {
+      width: 40%;
+      height: 100px;
+    }
+
+    .rummager {
+      width: 85%;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .rummager_name_img {
+      width: 90px;
+      height: 90px;
+      padding: 5px;
+    }
+
+    .in_form_short {
+      border: none;
+      width: 6%;
+    }
+
+    .addPagePdf {
+      z-index: -999;
+    }
+
+    .page_count {
+      line-height: 26px;
+      margin-left: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="pdfBoxes">
+    <div id="pdf_model" class="pdf_model">
+      <div class="container boxes">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="head_title">
+              <h3 class="text-center"><strong>郑州市热力总公司用户供热工程检查整改通知单</strong></h3>
+              <h5 class="page_count"></h5>
+            </div>
+            <div class="detail_table">
+              <table class="table table-condensed" id="tabProduct">
+                <tr>
+                  <td colspan="2">编号</td>
+                  <td colspan="2">
+                    <div class="input_text_box">
+                      <input class="in_form" id="bh" name="bh" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                  <td colspan="2">归档号</td>
+                  <td colspan="2">
+                    <div class="input_text_box">
+                      <input class="in_form" id="" name="bh" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">用户名称</td>
+                  <td colspan="6">
+                    <div class="input_text_box">
+                      <input class="in_form" id="" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">用户地址</td>
+                  <td colspan="2">
+                    <div class="input_text_box">
+                      <input class="in_form" id="" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                  <td colspan="2">设计单位</td>
+                  <td colspan="2">
+                    <div class="input_text_box">
+                      <input class="in_form" id="" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">所属供热区域</td>
+                  <td colspan="2">
+                    <div class="input_text_box">
+                      <input class="in_form" id="" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                  <td colspan="2">施工单位</td>
+                  <td colspan="2">
+                    <div class="input_text_box">
+                      <input class="in_form" id="" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">检查项目</td>
+                  <td colspan="2">
+                    <div class="input_text_box">
+                      <input class="in_form" id="" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                  <td colspan="2">一次支网管径</td>
+                  <td colspan="2">
+                    <div class="input_text_box">
+                      <input class="in_form" id="" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">设计参数</td>
+                  <td colspan="2">
+                    <div class="input_text_box">
+                      <input class="in_form" id="" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                  <td colspan="2">审图办结时间</td>
+                  <td colspan="2">
+                    <div class="input_text_box">
+                      <input class="in_form" id="" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">供热面积</td>
+                  <td colspan="2">
+                    <div class="input_text_box">
+                      <input class="in_form" id="" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                  <td colspan="2">检查时间</td>
+                  <td colspan="2">
+                    <div class="input_text_box">
+                      <input class="in_form" id="" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">热用途</td>
+                  <td colspan="2">
+                    <div class="input_text_box">
+                      <input class="in_form" id="" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                  <td colspan="2">冲洗、试压情况</td>
+                  <td colspan="2">
+                    <div class="input_text_box">
+                      <input class="in_form" id="" type="text" placeholder="请输入">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td rowspan="3" class="vertical_td"><span class="vertical_span">检查情况</span></td>
+                  <td class="clone" colspan="7" rowspan="3">
+                    <textarea class="in_form" rows="10" placeholder=""></textarea>
+                  </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                  <td rowspan="3" class="vertical_td"><span class="vertical_span">整改意见</span></td>
+                  <td class="clone" colspan="7" rowspan="3">
+                    <div class="chance_message">
+                      <textarea class="in_form" maxlength="" rows="15" placeholder=""></textarea>
+                    </div>
+                    <div class="exam_box">
+                      <div class="exam_left">
+                        <div class="exam_title"><span>盖章：</span></div>
+                        <div class="stamp">
+                          <div class="stamp_gz">
+                            <img src="/img/rlyscgz.png" id="gz" alt="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="exam_right">
+                        <div class="exam_title"><span>检查人：</span></div>
+                        <div class="rummager">
+                          <div class="rummager_name">
+                            <img class="rummager_name_img" src="/img/dzqm_gt.png" alt="">
+                          </div>
+                          <div class="rummager_name">
+                            <img class="rummager_name_img" src="/img/dzqm_lhj.png" alt="">
+                          </div>
+                          <div class="rummager_name">
+                            <img class="rummager_name_img" src="/img/dzqm_zj.png" alt="">
+                          </div>
+                          <div class="rummager_name">
+                            <img class="rummager_name_img" src="/img/dzqm_zpt.png" alt="">
+                          </div>
+                          <div class="rummager_name">
+                            <img class="rummager_name_img" src="/img/dzqm_zyq.png" alt="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="exam_time text-right">
+                      <input class="in_form_short" id="" type="text" placeholder="XXXX">年
+                      <input class="in_form_short" id="" type="text" placeholder="XX">月
+                      <input class="in_form_short" id="" type="text" placeholder="XX">日
+                    </div>
+                  </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button id="addPage">添加页</button>
+  <button id="sub">转出pdf</button>
+  <div id="addPagePdf" class="addPagePdf">
+
+  </div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/HtmlCanvas.js"></script>
+<script src="js/JsPdf.js"></script>
+<script>
+  layui.use('layer', function () {
+    var layer = layui.layer;
+
+    //深复制克隆id
+    // var ul1 = clones(ul, true);
+    // document.body.appendChild(ul1);
+    // 深复制修改id
+    function clones(sourceElem, deep, target) {
+      var elem;
+      if (sourceElem) { //如果元素存在就克隆
+        elem = sourceElem.cloneNode(deep); //deep是根据传入的参数定
+      } else {
+        elem = target; //递归回调函数中会用到这个
+      }
+      if (elem.id) elem.id += "Z"; //给有id的元素后面添加一个1
+      for (var i = 0; i < elem.children.length; i++) { //elem.children  是所有子元素，
+        clones(null, false, elem.children[i]);
+        //回调函数，也就是把这个行数再次执行一下，传入的参数是null也就是不再复制了， 主要是修改元素的id
+      }
+      return elem;
+    }
+    // //删除深复制
+    // remove = function () {
+    //   this.each(function (el) {
+    //     if (el.nodeType && el.nodeType == 1) {
+    //       S._unData(el);
+    //       if (el.parentNode) {
+    //         el.parentNode.removeChild(el);
+    //       }
+    //       // IE 678下这样会造成内存泄露，元素节点删除之后
+    //       // 仍有部分内存不能回收。可通过outerHTML回收，但是
+    //       // 需要知道的是这种方法也不能回收节点使用的全部内存，但是
+    //       // 最起码回收的比removeChild多。
+    //       if (typeof el.outerHTML !== undefined) {
+    //         el.outerHTML = "";
+    //       }
+    //     }
+    //   });
+    //   return this;
+    // }
+    $(function () {
+      var llq = WhatBrowser();
+      console.log(llq)
+      if (llq == "Chrome") {
+        console.log("谷歌")
+        document.getElementById("pdf_model").style.height = "1174px"
+      }
+      if (llq == "FF") {
+        console.log("火狐")
+        document.getElementById("pdf_model").style.width = "848.5px"
+        document.getElementById("pdf_model").style.height = "1200px"
+      }
+      if (llq == "Safari") {
+        console.log("safari")
+        document.getElementById("pdf_model").style.height = "1174px"
+      }
+      if (llq == "IE") {
+        console.log("IE")
+        document.getElementById("pdf_model").style.width = "848.5px"
+        document.getElementById("pdf_model").style.height = "1200px"
+      }
+      $("body").on("click", "#sub", function () {
+        makePdf("文件")
+      })
+      $("body").on("click", "#addPage", function () {
+        var targetDom = document.querySelector("#pdf_model")
+        var copyDom = targetDom.cloneNode(true)
+        copyDom.style.width = targetDom.scrollWidth + 'px'
+        copyDom.style.height = targetDom.scrollHeight + 'px'
+        var clonesNode = clones(copyDom, true)
+        document.getElementById("pdfBoxes").appendChild(clonesNode)
+        for (var i = 0; i < $("#pdfBoxes").find(".head_title").length; i++) {
+          var page = i + 1;
+          var pages = $("#pdfBoxes").find(".head_title").length;
+          var html = "第" + page + "页(共" + pages + "页）";
+          $("#pdfBoxes").find(".page_count")[i].innerHTML = "";
+          $("#pdfBoxes").find(".page_count")[i].append(html);
+        }
+      })
+      $("body").delegate(".rummager_name", "click", function () {
+        //询问框
+        var jcr = $(this).children()
+        layer.confirm('确定删除此监察人吗？', {
+          title: "提示",
+          btn: ['确定', '取消'],
+        }, function () {
+          jcr.remove()
+          layer.closeAll();
+        });
+      })
+    })
+  });
+
+  function makePdf(pdfName, targetDom) {
+    var targetDom = document.querySelector("#pdfBoxes")
+    const copyDom = targetDom.cloneNode(true)
+    copyDom.style.width = targetDom.scrollWidth + 'px'
+    copyDom.style.height = targetDom.scrollHeight + 'px'
+    console.log(targetDom.scrollHeight)
+    document.getElementById("addPagePdf").appendChild(copyDom)
+    // 插入之前canvas下
+    html2canvas(copyDom, {
+      allowTaint: false,
+      useCORS: true,
+      background: '#FFFFFF',
+      height: targetDom.scrollHeight,
+      width: targetDom.scrollWidth,
+      onrendered: function (canvas) {
+        // console.log(copyDom)
+        var contentWidth = canvas.width;
+        console.log(contentWidth)
+        var contentHeight = canvas.height;
+        console.log(contentHeight)
+        // 一页pdf显示html页面生成的canvas高度;
+        var pageHeight = contentWidth / 592.28 * 841.89;
+        //未生成pdf的html页面高度
+        console.log(pageHeight)
+        var leftHeight = contentHeight;
+        console.log(leftHeight)
+        //页面偏移
+        var position = 0;
+        //a4纸的尺寸[595.28,841.89]，html页面生成的canvas在pdf中图片的宽高  
+        var imgWidth = 595.28;
+        var imgHeight = 595.28 / contentWidth * contentHeight;
+        console.log(imgHeight)
+
+        var pageData = canvas.toDataURL('image/jpeg', 1.0);
+
+        var pdf = new jsPDF('', 'pt', 'a4');
+
+        //有两个高度需要区分，一个是html页面的实际高度，和生成pdf的页面高度(841.89) 
+        //当内容未超过pdf一页显示的范围，无需分页
+        if (leftHeight < pageHeight) {
+          pdf.addImage(pageData, 'JPEG', 0, 0, imgWidth, imgHeight);
+        } else {
+          while (leftHeight > 0) {
+            var aa = pdf.addImage(pageData, 'JPEG', 0, position, imgWidth, imgHeight)
+            leftHeight -= pageHeight;
+            position -= 841.89;
+            console.log(leftHeight)
+            //避免添加空白页
+            if (leftHeight > 0) {
+              pdf.addPage();
+            }
+          }
+        }
+        pdf.save(pdfName + ".pdf");
+
+        //上传到后台
+        var pdfData = pdf.output('datauristring') //获取到base64 的pdf
+        // console.log(pageData)
+        // console.log(pdfData)
+        // console.log($("#addPagePdf").children().first())
+        // $("#addPagePdf").children().first().remove()
+        // document.getElementById("addPagePdf").style.display = "none"
+      }
+    });
+  }
+  //将文件转成对象
+
+  function dataURLtoFile(dataurl, filename) {
+    var arr = dataurl.split(',');
+    var mime = arr[0].match(/:(.*?);/)[1];
+    var bstr = atob(arr[1]);
+    var n = bstr.length;
+    var u8arr = new Uint8Array(n);
+    while (n--) {
+      u8arr[n] = bstr.charCodeAt(n);
+    }
+    //转换成file对象
+    return new File([u8arr], filename, {
+      type: mime
+    });
+    //转换成成blob对象
+    //return new Blob([u8arr],{type:mime});
+  }
+
+
+  function WhatBrowser() {
+    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+    console.log(userAgent) //可以将这个打印出来会很清晰的展示出浏览器的类型
+    var isOpera = userAgent.indexOf("Opera") > -1;
+    if (isOpera) {
+      return "Opera"
+    }; //判断是否Opera浏览器
+    if (userAgent.indexOf("Firefox") > -1) {
+      return "FF";
+    } //判断是否Firefox浏览器
+    if (userAgent.indexOf("Chrome") > -1) {
+      return "Chrome";
+    } //判断是否是chrome浏览器
+    if (userAgent.indexOf("Safari") > -1) {
+      return "Safari";
+    } //判断是否Safari浏览器
+    if (userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera) {
+      return "IE";
+    }; //判断是否IE浏览器
+  }
+
+  $(document).keydown(function (event) {
+    if ((event.ctrlKey === true || event.metaKey === true) &&
+      (event.which === 189 || event.which === 187 ||
+        event.which === 173 || event.which === 61 ||
+        event.which === 107 || event.which === 109)) {
+      event.preventDefault();
+    }
+  });
+
+  $(window).bind('mousewheel DOMMouseScroll', function (event) {
+    if (event.ctrlKey === true || event.metaKey) {
+      event.preventDefault();
+    }
+  });
+
+  window.addEventListener('mousewheel', function (event) {
+    if (event.ctrlKey === true || event.metaKey) {
+      event.preventDefault();
+    }
+  }, {
+    passive: false
+  });
+
+  window.addEventListener('DOMMouseScroll', function (event) {
+    if (event.ctrlKey === true || event.metaKey) {
+      event.preventDefault();
+    }
+  }, {
+    passive: false
+  });
+</script>
+
+</html>

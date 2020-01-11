@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../js/jquery.js"></script>
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .floorBox {
+      height: 5000px;
+      position: relative;
+    }
+
+    .floor {
+      height: 500px;
+    }
+
+    .floorControl {
+      position: fixed;
+      background: red;
+      right: 15px;
+      top: 150px;
+    }
+
+    .floorControlBox {
+      text-align: center;
+    }
+
+    .floorControlBox span {
+      display: block;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+    }
+
+    .floorControlBox span:hover {
+      background: green;
+    }
+
+    #floorA {
+      background: yellow;
+    }
+
+    #floorB {
+      background: orchid;
+    }
+
+    #floorC {
+      background: blue;
+    }
+
+    #floorD {
+      background: beige;
+    }
+
+    #floorE {
+      background: aquamarine;
+    }
+
+    #floorF {
+      background: aqua;
+    }
+
+    #floorG {
+      background: blueviolet;
+    }
+
+    #floorH {
+      background: chartreuse;
+    }
+
+    #floorI {
+      background: darkgoldenrod;
+    }
+
+    .yellowColor {
+      background: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="floorBox">
+    <div id="floorA" class="floor">
+      <span>一层</span>
+    </div>
+    <div id="floorB" class="floor">
+      <span>二层</span>
+    </div>
+    <div id="floorC" class="floor">
+      <span>三层</span>
+    </div>
+    <div id="floorD" class="floor">
+      <span>四层</span>
+    </div>
+    <div id="floorE" class="floor">
+      <span>五层</span>
+    </div>
+    <div id="floorF" class="floor">
+      <span>六层</span>
+    </div>
+    <div id="floorG" class="floor">
+      <span>七层</span>
+    </div>
+    <div id="floorH" class="floor">
+      <span>八层</span>
+    </div>
+    <div id="floorI" class="floor">
+      <span>九层</span>
+    </div>
+    <div class="floorControl">
+      <div class="floorControlBox">
+        <span id="yi">一层</span>
+        <span id="er">二层</span>
+        <span id="san">三层</span>
+        <span id="si">四层</span>
+        <span id="wu">五层</span>
+        <span id="liu">六层</span>
+        <span id="qi">七层</span>
+        <span id="ba">八层</span>
+        <span id="jiu">九层</span>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  $(function () {
+    var str = "you-are-my-family"
+    console.log(str)
+    var jsSting = toUp(str)
+    console.log(jsSting)
+
+    $(document).scroll(function () {
+      var top = $(document).scrollTop()
+      if (top < 250) {
+        $("#yi").addClass("yellowColor")
+        $("#yi").siblings().removeClass("yellowColor")
+      } else if (top < 750) {
+        $("#er").addClass("yellowColor")
+        $("#er").siblings().removeClass("yellowColor")
+      } else if (top < 1250) {
+        $("#san").addClass("yellowColor")
+        $("#san").siblings().removeClass("yellowColor")
+      } else if (top < 1750) {
+        $("#si").addClass("yellowColor")
+        $("#si").siblings().removeClass("yellowColor")
+      } else if (top < 2250) {
+        $("#wu").addClass("yellowColor")
+        $("#wu").siblings().removeClass("yellowColor")
+      } else if (top < 2750) {
+        $("#liu").addClass("yellowColor")
+        $("#liu").siblings().removeClass("yellowColor")
+      } else if (top < 3250) {
+        $("#qi").addClass("yellowColor")
+        $("#qi").siblings().removeClass("yellowColor")
+      } else if (top < 3750) {
+        $("#ba").addClass("yellowColor")
+        $("#ba").siblings().removeClass("yellowColor")
+      } else if (top < 4250) {
+        $("#jiu").addClass("yellowColor")
+        $("#jiu").siblings().removeClass("yellowColor")
+      }
+    })
+    $("body").delegate(".floorControlBox span", "click", function () {
+      var floorID = $(this).attr("id")
+      switch (floorID) {
+        case "yi":
+          window.scrollTo(0, 0)
+          break;
+        case "er":
+          window.scrollTo(0, 500)
+          break;
+        case "san":
+          window.scrollTo(0, 1000)
+          break;
+        case "si":
+          window.scrollTo(0, 1500)
+          break;
+        case "wu":
+          window.scrollTo(0, 2000)
+          break;
+        case "liu":
+          window.scrollTo(0, 2500)
+          break;
+        case "qi":
+          window.scrollTo(0, 3000)
+          break;
+        case "ba":
+          window.scrollTo(0, 3500)
+          break;
+        case "jiu":
+          window.scrollTo(0, 4000)
+          break;
+      }
+    })
+  })
+
+  function toUp(str) {
+    var LongString = str.split("-")
+    if (LongString.length > 1) {
+      var ending = "";
+      for (var i = 0; i < LongString.length; i++) {
+        var up = LongString[i]
+        var first = up.substring(0, 1).toUpperCase()
+        var last = first + up.substring(1, LongString[i].length)
+        ending += last
+      }
+      var endingLast = ending.substring(0, 1).toLowerCase() + ending.substring(1, ending.length)
+      return endingLast
+
+    } else {
+      return str
+    }
+  }
+</script>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>热用户基本情况表</title>
+  <script src="../js/jquery.js"></script>
+  <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+  <style type="text/css">
+    html {
+      font-size: 12px;
+    }
+
+    .table tr td {
+      font-size: 12px;
+      width: 8rem;
+    }
+
+    .in_form {
+      border: none !important;
+      width: 2rem;
+    }
+
+    .clone {
+      background: #EFEFEF;
+    }
+
+    .nyr {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #in_company {
+      border: none;
+      width: 7rem;
+    }
+
+    #in_year {
+      border: none;
+      width: 3rem;
+    }
+
+    #in_month {
+      border: none;
+      width: 2rem;
+    }
+
+    #in_day {
+      border: none;
+      width: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="">
+          <h4 class="text-center"><strong>热用户基本情况表</strong></h4>
+        </div>
+        <div class="nyr">
+          <span>填写单位:
+            <input type="text" id="in_company" placeholder="郑州热力公司">
+          </span>
+          <span>
+            <input type="text" id="in_year" placeholder="2019">年
+            <input type="text" id="in_month" placeholder="11">月
+            <input type="text" id="in_day" placeholder="27">日
+          </span>
+        </div>
+        <div>
+          <table class="table table-bordered table-condensed" id="tabProduct">
+            <tr>
+              <td class="clone" colspan="4">基本情况</td>
+            </tr>
+            <tr>
+              <td>项目名称</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+              <td>开发单位</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td>详细地址</td>
+              <td colspan="3"><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td>供热区域</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+              <td>建筑物数量</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td>是否分期建设</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+              <td>建筑物楼号</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td>户数</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+              <td>用热性质</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td>用热面积</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+              <td>计划用热时间</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td class="clone" colspan="4">热力交换站情况</td>
+            </tr>
+            <tr>
+              <td>设计单位</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+              <td>施工单位</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td>一次网支管管径(MM)</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+              <td>热力站负荷（KM）</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td rowspan="2">站内调节装置（一次管网侧）</td>
+              <td>流量调节阀种类:<input class="in_form" id="" type="text" placeholder="————"></td>
+              <td rowspan="2">换热器面积及数量</td>
+              <td rowspan="2"><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td>
+                <input class="in_form" id="" type="text" placeholder="————">
+              </td>
+            </tr>
+            <tr>
+              <td class="clone" colspan="4">二次网情况</td>
+            </tr>
+            <tr>
+              <td>设计单位</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+              <td>施工单位</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td>监理单位</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+              <td>数设形式</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td class="clone" colspan="4">楼内设施情况</td>
+            </tr>
+            <tr>
+              <td>设计单位</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+              <td>施工单位</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td>入楼装置中是否安装有热量表</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+              <td>室内入户装置中是否安装有热量表</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td>室内采暖形式</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+              <td>室内管道安装形式</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td>采用节能设计</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+              <td>节能设计指标</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+            <tr>
+              <td>末端散热设备</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+              <td>室温调控装置</td>
+              <td><input class="in_form" id="" type="text" placeholder="————"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-9">
+        <button id="sub" type="button" class="btn btn-primary">提交</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

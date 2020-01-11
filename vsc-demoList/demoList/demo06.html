@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>并网验收意见书模板</title>
+  <script src="../js/jquery.js"></script>
+  <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <link rel="../stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+  <script src="../layui/layui.js"></script>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+  <style>
+    body {
+      margin: 0 auto;
+      max-width: 830px;
+    }
+
+    .pdf_model {
+      padding: 5px 10px;
+    }
+
+    .head_title_A {
+      padding: 15px 0px 15px 0px;
+    }
+
+    .head_title_B {
+      padding: 0px 0px 15px 0px;
+    }
+
+    .table {
+      table-layout: fixed;
+    }
+
+    .detail_table {
+      padding: 10px 0px;
+    }
+
+    .boxs {
+      width: 814px;
+    }
+
+    .gdh {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0px;
+    }
+
+    .table,
+    .table tr td {
+      border: 1px solid rgb(0, 0, 0) !important;
+    }
+
+    .in_form {
+      border: none;
+      width: 100%;
+    }
+
+    .in_form_short {
+      border: none;
+      width: 12rem;
+      text-align: center;
+    }
+
+    .in_form_small {
+      border: none;
+      width: 5rem;
+      text-align: center;
+    }
+
+    .position_box {
+      margin: 2%;
+    }
+
+
+    .position_top {
+      font-size: 14px;
+      line-height: 3.8rem;
+    }
+
+    .position_bottom {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: nowrap;
+      height: 200px;
+    }
+
+
+    .position_left {
+      position: relative;
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .position_right {
+      width: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .acceptor {
+      width: 88%;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .acceptor_name_img {
+      width: 90px;
+      height: 90px;
+      padding: 5px;
+    }
+
+    .position_title {
+      line-height: 150px;
+    }
+
+    .position_time {
+      border: none;
+      margin: 20px;
+    }
+
+    #gz {
+      position: absolute;
+      height: 200px;
+      width: 200px;
+      top: 0px;
+      left: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div id="pdf_model" class="pdf_model ">
+      <div class="container boxs">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="head_title_A">
+              <h4 class="text-center">郑州市热力总公司</h4>
+            </div>
+            <div class="head_title_B">
+              <h2 class="text-center"><strong>用户供热工程并网验收意见书</strong></h2>
+            </div>
+            <div class="gdh">
+              <div>
+                <span>归档号：</span>
+                <input class="in_form_short" id="" type="text" placeholder="请输入">
+              </div>
+              <div>
+                <span>郑热验字【 </span>
+                <input class="in_form_small" id="" type="text" placeholder="请输入">
+                <span>年】第</span>
+                <input class="in_form_small" id="" type="text" placeholder="请输入">
+                <span>号</span>
+              </div>
+            </div>
+            <div class="detail_table">
+              <table class="table table-bordered table-condensed" id="tabProduct">
+                <tr>
+                  <td>用户名称</td>
+                  <td colspan="3"><input class="in_form" id="" type="text" placeholder="请输入"></td>
+                </tr>
+                <tr>
+                  <td>用户地址</td>
+                  <td><input class="in_form" id="" type="text" placeholder="请输入"></td>
+                  <td>设计单位</td>
+                  <td><input class="in_form" id="" type="text" placeholder="请输入"></td>
+                </tr>
+                <tr>
+                  <td>所属供热区域</td>
+                  <td><input class="in_form" id="" type="text" placeholder="请输入"></td>
+                  <td>施工单位</td>
+                  <td><input class="in_form" id="" type="text" placeholder="请输入"></td>
+                </tr>
+                <tr>
+                  <td>检查项目</td>
+                  <td><input class="in_form" id="" type="text" placeholder="请输入"></td>
+                  <td>一次支网管径</td>
+                  <td><input class="in_form" id="" type="text" placeholder="请输入"></td>
+                </tr>
+                <tr>
+                  <td>设计参数</td>
+                  <td><input class="in_form" id="" type="text" placeholder="请输入"></td>
+                  <td>审图办结时间</td>
+                  <td><input class="in_form" id="" type="text" placeholder="请输入"></td>
+                </tr>
+                <tr>
+                  <td>供热面积</td>
+                  <td><input class="in_form" id="" type="text" placeholder="请输入"></td>
+                  <td>检查时间</td>
+                  <td><input class="in_form" id="" type="text" placeholder="请输入"></td>
+                </tr>
+                <tr>
+                  <td>热用途</td>
+                  <td><input class="in_form" id="" type="text" placeholder="请输入"></td>
+                  <td>冲洗、试压情况</td>
+                  <td><input class="in_form" id="" type="text" placeholder="请输入"></td>
+                </tr>
+                <tr>
+                  <td>采暖系统</td>
+                  <td colspan="3"><input class="in_form" id="" type="text" placeholder="请输入"></td>
+                </tr>
+                <tr>
+                  <td class="clone" colspan="4" rowspan="3">
+                    <div class="position_box">
+                      <div class="position_top">
+                        <span>单位<input class="in_form_short" id="" type="text" placeholder="请输入">:</span>
+                        <br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          根据你单位提交的《并网验收申请》及相关技术资料，
+                          我处依据《民用建筑供暖通风与空气调节设计规范》、
+                          《城镇供热管网工程施工及验收规范》、《建筑给水排水及采暖工程施工质量验收规范》
+                          等有关国家标准，及郑热【2014】86号《郑州市热力总公司用户供热工程建设标准》，
+                          对你单位申报的相关技术资料进行了审核，并对你单位位于
+                          <input class="in_form_short" id="" type="text" placeholder="请输入">的
+                          （项目名称）
+                          <input class="in_form_short" id="" type="text" placeholder="请输入">
+                          #楼供暖系统进行了并网验收。验收内容包括热力站、二次网及室内采暖系统。
+                          经实地检查验收，我处认为该工程符合采暖技术规范要求，具备安全运行条件，
+                          该供热工程验收合格准予并网并提出如下要求：</span>
+
+                      </div>
+                      <div class="position_title">
+                        <span>
+                          本结论只对现场检查结果负责；
+                          （以下无正文）
+                        </span>
+                      </div>
+                      <div class="position_bottom">
+                        <div class="position_left">
+                          <div class="position_title"><span>签章：</span></div>
+                          <div class="stamp">
+                            <div class="stamp_qz">
+                              <img src="/img/rlyscgz.png" id="gz" alt="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="position_right">
+                          <div class="position_title"><span>验收人：</span></div>
+                          <div class="acceptor">
+                            <div class="acceptor_name">
+                              <img class="acceptor_name_img" src="/img/dzqm_gt.png" alt="">
+                            </div>
+                            <div class="acceptor_name">
+                              <img class="acceptor_name_img" src="/img/dzqm_lhj.png" alt="">
+                            </div>
+                            <div class="acceptor_name">
+                              <img class="acceptor_name_img" src="/img/dzqm_zj.png" alt="">
+                            </div>
+                            <div class="acceptor_name">
+                              <img class="acceptor_name_img" src="/img/dzqm_zpt.png" alt="">
+                            </div>
+                            <div class="acceptor_name">
+                              <img class="acceptor_name_img" src="/img/dzqm_zyq.png" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="position_time text-right">
+                      <input class="in_form_small" id="" type="text" placeholder="XXXX">年
+                      <input class="in_form_small" id="" type="text" placeholder="XX">月
+                      <input class="in_form_small" id="" type="text" placeholder="XX">日
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="sub">转出pdf</button>
+  </div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/HtmlCanvas.js"></script>
+<script src="js/JsPdf.js"></script>
+<script>
+  layui.use('layer', function () {
+    var layer = layui.layer;
+
+    $(function () {
+      $("body").on("click", "#sub", function () {
+        makeMpdf("文件")
+      })
+      $(".acceptor").delegate(".acceptor_name", "click", function () {
+        //询问框
+        var jcr = $(this).children()
+        layer.confirm('确定删除此监察人吗？', {
+          btn: ['确定', '取消']
+        }, function () {
+          jcr.remove()
+          layer.closeAll();
+        });
+      })
+    })
+  });
+
+  function makeMpdf(pdfName) {
+    if (confirm("您确认下载该PDF文件吗?")) {
+      var target = document.getElementsByClassName("pdf_model")[0];
+      console.log(target)
+      target.style.background = "#FFFFFF";
+      if (pdfName == '' || pdfName == undefined) pdfName = getNowFormatDate();
+
+      html2canvas(target, {
+        allowTaint: true,
+        height: $("#pdf_model").outerHeight() + 20,
+        onrendered: function (canvas) {
+          var contentWidth = canvas.width;
+          var contentHeight = canvas.height;
+          //一页pdf显示html页面生成的canvas高度;
+          var pageHeight = contentWidth / 592.28 * 841.89;
+          //未生成pdf的html页面高度
+          var leftHeight = contentHeight;
+          //页面偏移
+          var position = 0;
+          //a4纸的尺寸[595.28,841.89]，html页面生成的canvas在pdf中图片的宽高
+          var imgWidth = 595.28;
+          var imgHeight = 595.28 / contentWidth * contentHeight;
+
+          var pageData = canvas.toDataURL('image/jpeg', 1.0);
+
+          var pdf = new jsPDF('', 'pt', 'a4');
+
+          //有两个高度需要区分，一个是html页面的实际高度，和生成pdf的页面高度(841.89)
+          //当内容未超过pdf一页显示的范围，无需分页
+          if (leftHeight < pageHeight) {
+            pdf.addImage(pageData, 'JPEG', 0, 0, imgWidth, imgHeight);
+          } else {
+            while (leftHeight > 0) {
+              pdf.addImage(pageData, 'JPEG', 0, position, imgWidth, imgHeight)
+              leftHeight -= pageHeight;
+              position -= 841.89;
+              //避免添加空白页
+              if (leftHeight > 0) {
+                pdf.addPage();
+              }
+            }
+          }
+          pdf.save(pdfName + ".pdf");
+
+          //上传到后台
+          var pdfData = pdf.output('datauristring') //获取到base64 的pdf
+          // console.log(pdfData)
+        }
+      })
+    }
+  }
+  //将文件转成对象
+
+  function dataURLtoFile(dataurl, filename) {
+    var arr = dataurl.split(',');
+    var mime = arr[0].match(/:(.*?);/)[1];
+    var bstr = atob(arr[1]);
+    var n = bstr.length;
+    var u8arr = new Uint8Array(n);
+    while (n--) {
+      u8arr[n] = bstr.charCodeAt(n);
+    }
+    //转换成file对象
+    return new File([u8arr], filename, {
+      type: mime
+    });
+    //转换成成blob对象
+    //return new Blob([u8arr],{type:mime});
+  }
+
+  $(document).keydown(function (event) {
+    if ((event.ctrlKey === true || event.metaKey === true) &&
+      (event.which === 189 || event.which === 187 ||
+        event.which === 173 || event.which === 61 ||
+        event.which === 107 || event.which === 109)) {
+      event.preventDefault();
+    }
+  });
+
+  $(window).bind('mousewheel DOMMouseScroll', function (event) {
+    if (event.ctrlKey === true || event.metaKey) {
+      event.preventDefault();
+    }
+  });
+
+  window.addEventListener('mousewheel', function (event) {
+    if (event.ctrlKey === true || event.metaKey) {
+      event.preventDefault();
+    }
+  }, {
+    passive: false
+  });
+
+  window.addEventListener('DOMMouseScroll', function (event) {
+    if (event.ctrlKey === true || event.metaKey) {
+      event.preventDefault();
+    }
+  }, {
+    passive: false
+  });
+</script>
+
+</html>
