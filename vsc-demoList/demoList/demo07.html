@@ -277,7 +277,7 @@
                         <div class="exam_title"><span>盖章：</span></div>
                         <div class="stamp">
                           <div class="stamp_gz">
-                            <img src="/img/rlyscgz.png" id="gz" alt="">
+                            <img src="../img/image.jpg" id="gz" alt="">
                           </div>
                         </div>
                       </div>
@@ -285,19 +285,19 @@
                         <div class="exam_title"><span>检查人：</span></div>
                         <div class="rummager">
                           <div class="rummager_name">
-                            <img class="rummager_name_img" src="/img/dzqm_gt.png" alt="">
+                            <img class="rummager_name_img" src="../img/image.jpg" alt="">
                           </div>
                           <div class="rummager_name">
-                            <img class="rummager_name_img" src="/img/dzqm_lhj.png" alt="">
+                            <img class="rummager_name_img" src="../img/image.jpg" alt="">
                           </div>
                           <div class="rummager_name">
-                            <img class="rummager_name_img" src="/img/dzqm_zj.png" alt="">
+                            <img class="rummager_name_img" src="../img/image.jpg" alt="">
                           </div>
                           <div class="rummager_name">
-                            <img class="rummager_name_img" src="/img/dzqm_zpt.png" alt="">
+                            <img class="rummager_name_img" src="../img/image.jpg" alt="">
                           </div>
                           <div class="rummager_name">
-                            <img class="rummager_name_img" src="/img/dzqm_zyq.png" alt="">
+                            <img class="rummager_name_img" src="../img/image.jpg" alt="">
                           </div>
                         </div>
                       </div>
@@ -325,9 +325,9 @@
 
   </div>
 </body>
-<script src="js/jquery.js"></script>
-<script src="js/HtmlCanvas.js"></script>
-<script src="js/JsPdf.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/HtmlCanvas.js"></script>
+<script src="../js/JsPdf.js"></script>
 <script>
   layui.use('layer', function () {
     var layer = layui.layer;
@@ -370,23 +370,24 @@
     //   return this;
     // }
     $(function () {
+      //不同浏览器内核不同因此dom元素渲染出的高度不同，因此动态控制高度使页面能够实现单张打印
       var llq = WhatBrowser();
-      console.log(llq)
+      // console.log(llq)
       if (llq == "Chrome") {
-        console.log("谷歌")
+        // console.log("谷歌")
         document.getElementById("pdf_model").style.height = "1174px"
       }
       if (llq == "FF") {
-        console.log("火狐")
+        // console.log("火狐")
         document.getElementById("pdf_model").style.width = "848.5px"
         document.getElementById("pdf_model").style.height = "1200px"
       }
       if (llq == "Safari") {
-        console.log("safari")
+        // console.log("safari")
         document.getElementById("pdf_model").style.height = "1174px"
       }
       if (llq == "IE") {
-        console.log("IE")
+        // console.log("IE")
         document.getElementById("pdf_model").style.width = "848.5px"
         document.getElementById("pdf_model").style.height = "1200px"
       }
@@ -427,7 +428,7 @@
     const copyDom = targetDom.cloneNode(true)
     copyDom.style.width = targetDom.scrollWidth + 'px'
     copyDom.style.height = targetDom.scrollHeight + 'px'
-    console.log(targetDom.scrollHeight)
+    // console.log(targetDom.scrollHeight)
     document.getElementById("addPagePdf").appendChild(copyDom)
     // 插入之前canvas下
     html2canvas(copyDom, {
@@ -439,21 +440,21 @@
       onrendered: function (canvas) {
         // console.log(copyDom)
         var contentWidth = canvas.width;
-        console.log(contentWidth)
+        // console.log(contentWidth)
         var contentHeight = canvas.height;
-        console.log(contentHeight)
+        // console.log(contentHeight)
         // 一页pdf显示html页面生成的canvas高度;
         var pageHeight = contentWidth / 592.28 * 841.89;
         //未生成pdf的html页面高度
-        console.log(pageHeight)
+        // console.log(pageHeight)
         var leftHeight = contentHeight;
-        console.log(leftHeight)
+        // console.log(leftHeight)
         //页面偏移
         var position = 0;
         //a4纸的尺寸[595.28,841.89]，html页面生成的canvas在pdf中图片的宽高  
         var imgWidth = 595.28;
         var imgHeight = 595.28 / contentWidth * contentHeight;
-        console.log(imgHeight)
+        // console.log(imgHeight)
 
         var pageData = canvas.toDataURL('image/jpeg', 1.0);
 
@@ -468,7 +469,7 @@
             var aa = pdf.addImage(pageData, 'JPEG', 0, position, imgWidth, imgHeight)
             leftHeight -= pageHeight;
             position -= 841.89;
-            console.log(leftHeight)
+            // console.log(leftHeight)
             //避免添加空白页
             if (leftHeight > 0) {
               pdf.addPage();
@@ -478,12 +479,12 @@
         pdf.save(pdfName + ".pdf");
 
         //上传到后台
-        var pdfData = pdf.output('datauristring') //获取到base64 的pdf
+        // var pdfData = pdf.output('datauristring') //获取到base64 的pdf
         // console.log(pageData)
         // console.log(pdfData)
         // console.log($("#addPagePdf").children().first())
-        // $("#addPagePdf").children().first().remove()
         // document.getElementById("addPagePdf").style.display = "none"
+        $("#addPagePdf").children().first().remove()
       }
     });
   }
@@ -509,7 +510,7 @@
 
   function WhatBrowser() {
     var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
-    console.log(userAgent) //可以将这个打印出来会很清晰的展示出浏览器的类型
+    // console.log(userAgent) //可以将这个打印出来会很清晰的展示出浏览器的类型
     var isOpera = userAgent.indexOf("Opera") > -1;
     if (isOpera) {
       return "Opera"

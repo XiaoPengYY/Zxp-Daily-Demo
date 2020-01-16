@@ -14,7 +14,7 @@
   <style>
     .mapper {
       width: 900px;
-      height: 500px;
+      height: 600px;
     }
 
     html {
@@ -64,9 +64,9 @@
 
           </div>
           <div class="body_middle">
-            <div id="mainMap" class="mapper"></div>
-            <div id="mainRadar" class="mapper"></div>
-            <div id="mainMigrate" class="mapper"></div>
+            <!-- <div id="mainMap" class="mapper"></div> -->
+            <!-- <div id="mainRadar" class="mapper"></div> -->
+            <!-- <div id="mainMigrate" class="mapper"></div> -->
             <div id="mainGames" class="mapper"></div>
           </div>
           <div class="body_bottom">
@@ -82,10 +82,10 @@
   $(function () {
     //canvas背景
     canvas("starts", 230, 1000, 50, 2, 999999, 0.5);
-    mapper();
-    radar();
+    // mapper();
+    // radar();
     // migrate();
-    // games();
+    games();
   })
 
 
